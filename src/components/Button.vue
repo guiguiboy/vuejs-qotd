@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button v-html="getLabel(action)"></button>
+    <button>
+      <slot name="text">Envoyer</slot>
+    </button>
   </div>
 </template>
 
@@ -11,11 +13,6 @@ export default {
   props: {
     action: String,
     qotd: Object
-  },
-  methods: {
-    getLabel: function(type) {
-      return type === 'voteplus' ? 'trolol' : 'dafuq'
-    }
   }
 }
 

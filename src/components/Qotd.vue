@@ -3,8 +3,16 @@
     <div>{{ qotd.title }}</div>
     <div v-html="valueToDisplay"></div>
     <div>{{ qotd.score }}</div>
-    <Button action="voteplus" :qotd="qotd"></Button>
-    <Button action="voteminus" :qotd="qotd"></Button>
+    <Button action="voteplus" :qotd="qotd">
+      <template v-slot:text>
+        +1
+      </template>
+    </Button>
+    <Button action="voteminus" :qotd="qotd">
+      <template v-slot:text>
+        -1
+      </template>
+    </Button>
   </div>
 </template>
 
