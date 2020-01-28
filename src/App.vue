@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Menu/>
+
+    <QotdList name="Latest first" :pagination="false" :limit="10" sortColumn="date" sortOrder="desc">
+    </QotdList>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Menu from './components/Menu.vue'
+import QotdList from "./components/QotdList";
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    QotdList,
+    Menu
   }
 }
 </script>
